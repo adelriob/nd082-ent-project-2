@@ -98,10 +98,10 @@ This is the second project of the course "DevOps Engineer for Microsoft Azure Na
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+In the future, the application will be moved to Azure Repos to keep all the flow from Azure Cloud.
 
 ## Demo 
 
-<TODO: Add link Screencast on YouTube>
+Look at this demo of the application from youtube, below the link [HERE](https://youtu.be/0jcIIQIIKQI).
 
 
