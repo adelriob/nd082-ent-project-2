@@ -8,7 +8,7 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: 'e21ceff0-7839-4f1c-9b33-102aa742fff3'
+  azureServiceConnectionId: '52de3fb6-88f9-4740-ab60-62c6ed5a65dd'
 
   # Web app name
   webAppName: 'adelriob-flask'
