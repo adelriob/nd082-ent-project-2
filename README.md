@@ -26,58 +26,75 @@ This is the second project of the course "DevOps Engineer for Microsoft Azure Na
 
     * Open Azure Cloud Shell, create a SSH key pair by: ssh-keygen -t rsa;
     
-    ![Create SSH](screenshot/ssh.jpg)
+    ![Create SSH](screenshot/ssh.JPG)
 
     * Copy and paste the public SSH key to github.com -> Settings -> SSH and GPG Keys -> New SSH Key
     
-    ![Add SSH](screenshot/add_ssh.jpg)
+    ![Add SSH](screenshot/add_ssh.JPG)
     
     * Clone repository
 
-    ![Clone repo](screenshot/git_clone.jpg)
+    ![Clone repo](screenshot/git_clone.JPG)
 
 * Project running on Azure App Service
 
-    * Go to directory: cd nd082-ent-project-2/
+    * Go to directory: cd nd082-ent-project-2/flask-sklearn 
 
-    ![Directory](screenshot/directory.jpg)
+    ![Directory](screenshot/directory.JPG)
 
-    * Create Webapp on Azure: az webapp up --sku F1 --name adelriob-flask --location "East US"
+    * Create virtual environment
 
-    ![Create webapp](screenshot/create_webapp.jpg)
+    ![Environment](screenshot/environment.JPG)
 
-    ![Create webapp](screenshot/create_webapp_t.jpg)
+    * Go to virtual environment
+
+    ![Virtual Environment](screenshot/virt_env.JPG)
+
+    * Run make all
+
+    ![make all](screenshot/make_all.JPG)
+
+    * Run app to verify
+
+    ![Run App](screenshot/run_app.JPG)
+
+    ![Run App](screenshot/run_app_2.JPG)
+
+    * Create Webapp on Azure: az webapp up --sku FREE --name adelriob-flask --location "East US" 
+
+    ![Create webapp](screenshot/create_webapp.JPG)
+
+    ![Create webapp](screenshot/create_webapp_t.JPG)
 
     * Modify make_predict_azure_app.sh with the webapp name adelriob-flask in the POST target line
 
-    ![adelriob-flask](screenshot/adelriob-flask.jpg)
+    ![adelriob-flask](screenshot/adelriob-flask.JPG)
 
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
+    ![adelriob-flask](screenshot/adelriob-flask-2.JPG)
 
-    ![make_all_1](screenshot/make_all_1.jpg)
+    * Performance TEST
+    We use LOCUST to performance test of the apply.
 
-    ![make_all_2](screenshot/make_all_2.jpg)
+        * Install Locust: pip install locust
 
-* Output of a test run
+        ![Install Locus](screenshot/install_locust.JPG)
 
-    ![test](screenshot/test.jpg)
+        * Run Locust
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+        ![Run Locus](screenshot/run_locust.JPG)
 
+        * Go to link: http://localhost:8089/ and simulate users
 
+        ![Simulate](screenshot/simulate.JPG)
 
-* Running Azure App Service from Azure Pipelines automatic deployment
+        ![Simulate](screenshot/simulate_2.JPG)
 
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
+    * Github Actions and Azure Pipelines status
 
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
+    ![Github Actions](screenshot/github_actions_pylint_pytest_ok.JPG)
 
-* Output of streamed log files from deployed application 
+    ![Github Actions](screenshot/azure_pipelines.JPG)
+
 
 ## Enhancements
 
