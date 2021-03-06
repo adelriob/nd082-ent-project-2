@@ -7,30 +7,64 @@ Proyecto 2 para DevOps Engineer for Microsoft Azure Nanodegree Program
 
 # Overview
 
-<TODO: complete this with an overview of your project>
+This is the second project of the course "DevOps Engineer for Microsoft Azure Nanodegree Program". With this project, the CI / CD process will be carried out through Azure Pipelines pipes.
 
 ## Project Plan
-<TODO: Project Plan
 
 * A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+    * https://trello.com/b/v1p899YD/projectflask
+* A link to a spreadsheet that includes the original and final project plan
+    * https://github.com/adelriob/nd082-ent-project-2/blob/main/project-management-template.xlsx
 
 ## Instructions
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
+* Architectural Diagram (Shows how key parts of the system work)
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
-
-* Project running on Azure App Service
+![System architecture](screenshot/Diagram_Udacity_Project_2.png)
 
 * Project cloned into Azure Cloud Shell
 
+    * Open Azure Cloud Shell, create a SSH key pair by: ssh-keygen -t rsa;
+    
+    ![Create SSH](screenshot/ssh.jpg)
+
+    * Copy and paste the public SSH key to github.com -> Settings -> SSH and GPG Keys -> New SSH Key
+    
+    ![Add SSH](screenshot/add_ssh.jpg)
+    
+    * Clone repository
+
+    ![Clone repo](screenshot/git_clone.jpg)
+
+* Project running on Azure App Service
+
+    * Go to directory: cd nd082-ent-project-2/
+
+    ![Directory](screenshot/directory.jpg)
+
+    * Create Webapp on Azure: az webapp up --sku F1 --name adelriob-flask --location "East US"
+
+    ![Create webapp](screenshot/create_webapp.jpg)
+
+    ![Create webapp](screenshot/create_webapp_t.jpg)
+
+    * Modify make_predict_azure_app.sh with the webapp name adelriob-flask in the POST target line
+
+    ![adelriob-flask](screenshot/adelriob-flask.jpg)
+
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
+
+    ![make_all_1](screenshot/make_all_1.jpg)
+
+    ![make_all_2](screenshot/make_all_2.jpg)
 
 * Output of a test run
 
+    ![test](screenshot/test.jpg)
+
 * Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+
+
 
 * Running Azure App Service from Azure Pipelines automatic deployment
 
@@ -43,9 +77,7 @@ Port: 443
 {"prediction":[20.35373177134412]}
 ```
 
-* Output of streamed log files from deployed application
-
-> 
+* Output of streamed log files from deployed application 
 
 ## Enhancements
 
